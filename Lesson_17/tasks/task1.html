@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>		
+		Створити клас, що дозволяє виконувати такі 
+		операції над масивами: знаходження кількості додатних, кількості від’ємних, 
+		кількість входжень деякого числа (статичні методи)
+	</p>
+	<script>
+	  class ArrOperations {
+			static countPositive(arr) {
+				return arr.reduce((count, el) => (el > 0 ? count +1 : count),0)
+			}
+			static countNegative(arr) {
+				return arr.reduce((count, el) => (el < 0 ? count +1 : count),0)
+			}
+			static countIncludeNumber(arr, number) {
+				return arr.reduce((count, el) => (el === number ? count +1 : count),0)
+			}
+		}
+
+		let arr = [3, -1, 5, -2, 0, 3, -1, 7, 3, 8, 3, 5, 3]
+
+		const positiveCount = ArrOperations.countPositive(arr)
+		const negativeCount = ArrOperations.countNegative(arr)
+		const number = 3
+		const includeNumCount = ArrOperations.countIncludeNumber(arr, number)
+		console.log(arr);
+		console.log(`Додатних: ${positiveCount}`)
+		console.log(`Відємних: ${negativeCount}`)
+		console.log(`К-ть входжень ${number}: ${includeNumCount}`)
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
